@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ad Sandbox</title>
+</head>
+<body>
+<script>
+  (function() {
+    var iframe = document.createElement('iframe');
+    iframe.src = 'http://domain2/open-poc/ad.html';
+    document.body.appendChild(iframe);
+
+    window.addEventListener('message', function(event) {
+      console.log(event.data);
+      if (event.data.cmd === 'open') {
+        window.open(event.data.url);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

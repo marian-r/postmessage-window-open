@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ad</title>
+</head>
+<body>
+<script>
+  function sendMessageToOpen() {
+    parent.postMessage({cmd: 'open', url: 'https://verizonmedia.com'}, '*');
+  }
+</script>
+<button onclick="sendMessageToOpen()">Open new page</button>
+</body>
+</html>
